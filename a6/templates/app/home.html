@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    span
+    {
+        color:red;
+    }
+    </style>
+    <script>
+            function check_fname(){
+            var f = document.frm.fname.value;
+            var reg = /^[A-Za-z]+$/;
+            if(f.trim()==""){
+                document.getElementById("error").innerHTML="****Please enter your Fname";
+            }else if(!reg.test(f)){
+                document.getElementById("error").innerHTML="****Please enter only Alphabet";
+            }else{
+                document.getElementById("error").innerHTML="";
+            }
+            }
+
+            function check_lname(){
+            var l = document.frm.lname.value;
+            var reg = /^[A-Za-z]+$/;
+            if(l.trim()==""){
+                document.getElementById("error").innerHTML="Please enter your Lname";
+            }else if(!reg.test(l)){
+                document.getElementById("error").innerHTML="Please enter only Alphabet";
+            }else{
+                document.getElementById("error").innerHTML="";
+            }
+            }
+
+            function check_phone(){
+            var o = document.frm.phone.value;
+            var reg = /^\d{10}$/;
+            if(o.trim()==""){
+                document.getElementById("error").innerHTML="Please enter your contact";
+            }else if(!reg.test(o)){
+                document.getElementById("error").innerHTML="Please enter only Alphabet";
+            }else{
+                document.getElementById("error").innerHTML="";
+            }
+            }
+
+
+            function Age(){
+            var s = document.frm.age.value;
+            var reg = /^\d{10}$/;
+            if(s.trim()==""){
+                document.getElementById("error").innerHTML="Please enter your age";
+            }else if(!reg.test(s)){
+                document.getElementById("error").innerHTML="Please enter only integer";
+            }else{
+                document.getElementById("error").innerHTML="";
+            }
+            }
+
+
+            function Email(){
+            var q = document.frm.email.value;
+            var reg = /^\w+([\.-?\w+])*@\w([\.-]?\w+)*(\.\w{2,3})+$/;
+            if(q.trim()==""){
+                document.getElementById("error").innerHTML="Please enter valid email";
+            }else if(!reg.test(q)){
+                document.getElementById("error").innerHTML="Please email";
+            }else{
+                document.getElementById("error").innerHTML="";
+            }
+            }
+    </script>        
+</head>
+<body>
+    
+    <form action="" method="post" name="frm">
+        <table>
+            <tr>
+                <td>Firstname :</td>
+                <td><input type="text" name="fname" onclick="check_fname();"><span id="error"></span> </td>
+            </tr>
+        
+                <tr>
+                    <td>Lastname :</td>
+                    <td><input type="text" name="lname" onclick="check_lname();"><span id="error"></span> </td>
+                </tr>
+                <tr>
+                    <td>phonumber :</td>
+                    <td><input type="text" name="phone" onclick="check_phone();"><span id="error"></span> </td>
+                </tr>
+                        <tr>
+                    <td>Age :</td>
+                    <td><input type="text" name="age" onclick="Age();"><span id="error"></span> </td>
+                </tr>
+        
+                <tr>
+                    <td>Email :</td>
+                    <td><input type="text" name="email" onclick="Email();"><span id="error"></span> </td>
+                </tr>
+        </table>
+    </form>
+</body>
+</html>
